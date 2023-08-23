@@ -1,0 +1,77 @@
+/* navigation.css */
+.navbar {
+    background-color: rgb(123, 4, 4);
+    /* Set the background color */
+    overflow: hidden;
+    position: fixed;
+    top: 0;
+    width: 100%;
+}
+
+.navbar-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+}
+
+.navbar-logo {
+    color: white;
+    font-size: 1.5rem;
+    text-decoration: none;
+}
+
+.navbar-menu {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+.navbar-item {
+    margin: 0 1rem;
+}
+
+.navbar-link {
+    color: white;
+    text-decoration: none;
+}
+
+/* Mobile menu styles */
+.navbar-toggle {
+    display: none;
+    cursor: pointer;
+}
+
+.bar {
+    width: 25px;
+    height: 3px;
+    background-color: white;
+    margin: 5px 0;
+}
+
+@media (max-width: 768px) and (max-width: 1024px){
+    .navbar-menu {
+        display: none;
+        flex-direction: column;
+        background-color: red;
+        /* Set background color for mobile menu */
+        position: absolute;
+        width: 100%;
+        top: 60px;
+        left: 0;
+        transition: max-height 0.3s ease-in-out;
+        max-height: 0;
+        overflow: hidden;
+        z-index: 1;
+    }
+
+    .navbar-menu.active {
+        max-height: 500px;
+        /* Adjust this value based on your content */
+    }
+
+    .navbar-toggle {
+        display: block;
+    }
+}
